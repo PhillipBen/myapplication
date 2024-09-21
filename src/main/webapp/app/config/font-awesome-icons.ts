@@ -1,3 +1,5 @@
+// https://fontawesome.com/v6/icons?
+
 import {
   faArrowLeft,
   faAsterisk,
@@ -11,6 +13,7 @@ import {
   faCogs,
   faDatabase,
   faEye,
+  faFile, // Added
   faFlag,
   faHeart,
   faHome,
@@ -53,6 +56,7 @@ export const fontAwesomeIcons = [
   faCogs,
   faDatabase,
   faEye,
+  faFile,
   faFlag,
   faHeart,
   faHome,

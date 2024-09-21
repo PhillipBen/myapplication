@@ -19,11 +19,21 @@
     </a>
     <div class="navbar-collapse collapse" id="navbarResponsive" [ngbCollapse]="isNavbarCollapsed()">
       <ul class="navbar-nav ms-auto">
+        <!-- Added -->
+        <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
+          <a class="nav-link" routerLink="/test-page" (click)="collapseNavbar()">
+            <span>
+              <fa-icon icon="file"></fa-icon>
+              <span>TestPage</span>
+            </span>
+          </a>
+        </li>
+        <!-- End of Added -->
         <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
           <a class="nav-link" routerLink="/" (click)="collapseNavbar()">
             <span>
               <fa-icon icon="home"></fa-icon>
-              <span>Home</span>
+              <span>Homes</span>
             </span>
           </a>
         </li>

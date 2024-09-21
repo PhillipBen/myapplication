@@ -12,6 +12,11 @@ const routes: Routes = [
     title: 'home.title',
   },
   {
+    path: 'test-page',
+    loadComponent: () => import('./TestPage/test-page.component'),
+    title: 'test-page.title',
+  },
+  {
     path: '',
     loadComponent: () => import('./layouts/navbar/navbar.component'),
     outlet: 'navbar',

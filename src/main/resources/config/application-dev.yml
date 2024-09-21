@@ -30,15 +30,54 @@ spring:
   jackson:
     serialization:
       indent-output: true
+  datasource:
+    type: com.zaxxer.hikari.HikariDataSource
+    url: jdbc:mysql://localhost:3306/myapplication?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
+    username: root
+    password: toor
+    hikari:
+      poolName: Hikari
+      auto-commit: false
+      data-source-properties:
+        cachePrepStmts: true
+        prepStmtCacheSize: 250
+        prepStmtCacheSqlLimit: 2048
+        useServerPrepStmts: true
   liquibase:
     # Remove 'faker' if you do not want the sample data to be loaded automatically
     contexts: dev, faker
     url: jdbc:mysql://localhost:3306/myapplication?useUnicode=true&characterEncoding=utf8&useSSL=false&useLegacyDatetimeCode=false&createDatabaseIfNotExist=true
   mail:
-    host: localhost
-    port: 25
-    username:
-    password:
+    #spring:
+    #  profiles:
+    #    active: dev
+    #  mail:
+    #    host: smtp-mail.outlook.com
+    #    port: 587
+    #    username: jhipsterofficial@outlook.com  #Replace this field with your Outlook username.
+    #    password: cR77@Ag3                #Replace this field with your Outlook password.
+    #    protocol: smtp
+    #    tls: true
+    #    properties.mail.smtp:
+    #      auth: true
+    #      starttls.enable: true
+    #      ssl.trust: smtp-mail.outlook.com
+    #Works, but gives Username and Password not accepted. For more information, go to
+    #535 5.7.8  https://support.google.com/mail/?p=BadCredentials ca18e2360f4ac-82d49338947sm339665339f.41 - gsmtp
+    host: smtp.gmail.com
+    port: 587
+    username: jhipsterofficial@gmail.com #Replace this field with your Gmail username.
+    password: vheg woyf fhgt ulmz #Replace this field with your Gmail password/App password.
+    protocol: smtp
+    tls: true
+    properties.mail.smtp:
+      auth: true
+      starttls.enable: true
+      ssl.trust: smtp.gmail.com
+    #host: localhost
+    #port: 25
+    #username:
+    #password:
   messages:
     cache-duration: PT1S # 1 second, see the ISO 8601 standard
   r2dbc:
